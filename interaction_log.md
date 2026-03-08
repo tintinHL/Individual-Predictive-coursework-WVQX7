@@ -1,4 +1,4 @@
-# Interaction Log
+﻿# Interaction Log
 
 Date: 2026-03-01  
 Project: DeepFashion subset preparation
@@ -24,8 +24,7 @@ Project: DeepFashion subset preparation
 
 5. User asked to add a sanity-check plot.
 
-6. Assistant updated notebook:
-   - Added final plotting cell to show color-attribute frequencies.
+
 
 7. User reported `FileNotFoundError` for `list_eval_partition.txt`.
 
@@ -69,3 +68,26 @@ Project: DeepFashion subset preparation
 - `Anno_coarse/list_attr_img.txt`
 - `Anno_coarse/list_attr_cloth.txt`
 
+## Interaction Entry - 2026-03-08
+
+### User Request
+Create a markdown log of interactions with an agent based on this project.
+
+### Assistant Action
+- Located the existing project log file: `interaction_log.md`.
+- Added this dated entry to keep a continuous interaction history in one markdown file.
+
+### Result
+Project interaction log now includes this request and response as a new entry.
+
+## Interaction Entry - 2026-03-08 (Follow-up)
+
+### User Request
+Keep track of everything we interact on for this project.
+
+### Assistant Action
+- Confirmed continuous logging to `interaction_log.md` for this project.
+- Committed to appending a new entry for each subsequent interaction in this session/workflow.
+
+### Result
+Interaction tracking is now active as an ongoing process for this project log.
