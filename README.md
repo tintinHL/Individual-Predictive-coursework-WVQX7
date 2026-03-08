@@ -42,9 +42,10 @@ End-to-end predictive system for 32-class clothing category classification using
 │
 ├── img.zip                            # Full DeepFashion images (compressed)
 │
-├── interaction_log.md                 # Agent interaction log (1 March)
+├── interaction_log.md                 # Agent interaction log
 ├── session_log_2026-03-02_00-56-17.md # Detailed session log
-└── interaction_log_2026-03-08.md      # Agent interaction log (8 March)
+└── interaction_log_2026-03-08.md      # Agent interaction log
+└── combined_logs_chronological.md
 ```
 
 ## Setup & Installation
