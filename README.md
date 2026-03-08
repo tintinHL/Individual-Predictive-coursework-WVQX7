@@ -1,7 +1,6 @@
 # DeepFashion Clothing Category Classification
 
 **Module:** MSIN0097 Predictive Analytics — Individual Coursework 2025–26
-Candidate number: WVQX7
 
 ## Project Overview
 
@@ -18,7 +17,7 @@ End-to-end predictive system for 32-class clothing category classification using
 ├── requirements.txt                   # Python dependencies
 ├── README.md                          # This file
 │
-├── Anno_coarse/                       # DeepFashion annotation files
+├── Anno_coarse/                       # DeepFashion annotation files (gitignored)
 │   ├── list_attr_cloth.txt
 │   ├── list_attr_img.txt
 │   ├── list_category_cloth.txt
@@ -27,7 +26,7 @@ End-to-end predictive system for 32-class clothing category classification using
 ├── Eval/
 │   └── list_eval_partition.txt        # Train/val/test partition
 │
-├── data/
+├── data/                              # Generated data (gitignored)
 │   ├── subset_images_representative/  # 10,000 sample images
 │   ├── hog_features/                  # Cached HOG/PCA features (.npy)
 │   │   ├── X_train_hog.npy
@@ -36,15 +35,16 @@ End-to-end predictive system for 32-class clothing category classification using
 │   │   └── ...
 │   └── subset_images_unbalanced_alphabetical/  # Initial subset (archived)
 │
-├── models/                            # Pre-trained checkpoints
+├── models/                            # Pre-trained checkpoints (gitignored)
 │   ├── champion_resnet18.pt           # Optuna-tuned ResNet18
 │   └── vit_b16.pt                     # ViT-B/16
 │
-├── img.zip                            # Full DeepFashion images (compressed)
+├── img.zip                            # Full DeepFashion images (gitignored)
 │
 ├── interaction_log.md                 # Agent interaction log (1 March)
 ├── session_log_2026-03-02_00-56-17.md # Detailed session log
-└── interaction_log_2026-03-08.md      # Agent interaction log (8 March)
+├── interaction_log_2026-03-08.md      # Agent interaction log (8 March)
+└── combined_logs_chronological.md     # Combined interaction logs
 ```
 
 ## Setup & Installation
@@ -65,7 +65,18 @@ pip install -r requirements.txt
 The DeepFashion Category and Attribute Prediction Benchmark is available at:
 http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html
 
-The annotation files (`Anno_coarse/`, `Eval/`) and a representative 10,000-image subset are included in this repository. The full `img.zip` (2.6GB) contains all source images.
+Download the Category and Attribute Prediction Benchmark from the Google Drive link on that page. You will need `img.zip` and the annotation files.
+
+### Files Not in Repository (size limits)
+
+The following are excluded via `.gitignore` due to GitHub size constraints:
+
+- `data/` — subset images and cached HOG/PCA features (~2GB)
+- `img.zip` — full DeepFashion images (2.6GB)
+- `Anno_coarse/` — annotation files
+- `models/` — pre-trained checkpoints (.pt files)
+
+**To fully reproduce from scratch:** Download the DeepFashion dataset from the link above, place `Anno_coarse/` and `Eval/` in the repository root, then run the notebook from Step 1 — it will generate all subset images, features, and trained models automatically.
 
 ## How to Run
 
@@ -110,7 +121,7 @@ Pre-trained model checkpoints are saved in `models/`. To skip training and run e
 Two agent tools were used following a plan → delegate → verify → revise workflow:
 
 - **Codex (VS Code):** Code scaffolding, pipeline generation, model architecture templates
-- **Gemini (https://gemini.google.com/):** Bug fixing, structural improvements, report generation
+- **Gemini (https://gemini.google.com/):** Bug fixing, structural improvements, report assistance
 
 Full interaction logs are available in the repository root. The decision register documenting accepted/modified/rejected agent contributions is in the report appendix.
 
