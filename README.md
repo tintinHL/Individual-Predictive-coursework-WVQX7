@@ -65,18 +65,24 @@ pip install -r requirements.txt
 The DeepFashion Category and Attribute Prediction Benchmark is available at:
 http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html
 
-Download the Category and Attribute Prediction Benchmark from the Google Drive link on that page. You will need `img.zip` and the annotation files.
+### Complete Project Download (recommended)
+
+The full project including all images, cached features, annotation files, and pre-trained model checkpoints is available as a single zip download:
+
+**[Download Individual-Predictive-coursework-WVQX7.zip from OneDrive](https://liveuclac-my.sharepoint.com/:u:/g/personal/uceihln_ucl_ac_uk/IQBDOfn31kgDQrberRyn2guCAS6JHJjwiDm7AYONwn9mAz4?e=JdagYf)**
+
+Extract the zip into your working directory. All paths in the notebook will resolve correctly without any additional setup.
 
 ### Files Not in Repository (size limits)
 
-The following are excluded via `.gitignore` due to GitHub size constraints:
+The following are excluded via `.gitignore` due to GitHub size constraints but are included in the OneDrive zip above:
 
 - `data/` — subset images and cached HOG/PCA features (~2GB)
 - `img.zip` — full DeepFashion images (2.6GB)
 - `Anno_coarse/` — annotation files
 - `models/` — pre-trained checkpoints (.pt files)
 
-**To fully reproduce from scratch:** Download the DeepFashion dataset from the link above, place `Anno_coarse/` and `Eval/` in the repository root, then run the notebook from Step 1 — it will generate all subset images, features, and trained models automatically.
+**To reproduce from the original source instead:** Download the DeepFashion dataset from the link above, place `Anno_coarse/` and `Eval/` in the repository root, then run the notebook from Step 1 — it will generate all subset images, features, and trained models automatically.
 
 ## How to Run
 
@@ -88,7 +94,7 @@ The following are excluded via `.gitignore` due to GitHub size constraints:
 
 ### Quick Reproduce (without retraining)
 
-Pre-trained model checkpoints are saved in `models/`. To skip training and run evaluation only:
+Pre-trained model checkpoints are included in the OneDrive zip under `models/`. To skip training and run evaluation only:
 
 1. Run cells up to and including Step 3 (data loading and splitting)
 2. Skip Steps 4.1–4.7 (model training cells)
